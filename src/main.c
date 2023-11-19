@@ -31,8 +31,22 @@ Ejemplo
 $> ./pipex infile "ls -l" "wc -l" outfile
 deberá hacer lo mismo que “<infile ls -l | wc -l >outfile”
 */
-int	main(int ac, char *av[])
+/*int	main(int ac, char *av[], char*env[])
 {
+	
+	return (0);
+}*/
 
+#include "../include/pipex.h"
+
+int	main(int argc, char *argv[], char *envs[])
+{
+	int	i;
+	(void)argc;
+	(void)argv;
+	i = 0;
+	while (ft_strnstr(envs[i], "PATH=", 5) == NULL)
+		i++;
+	printf("%s\n", envs[i]);
 	return (0);
 }
