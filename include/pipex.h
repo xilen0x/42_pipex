@@ -16,14 +16,25 @@
 # include "../libft/libft.h"
 # include <stdlib.h>
 # include <unistd.h>
+# include <fcntl.h>//para open
+# include <sys/wait.h>//para wait
 
 // ------------------------ Structs ------------------------ //
-/*typedef struct s_stack
+typedef struct s_data
 {
-	int				num;
-	struct s_stack	*next;
-}	t_stack;
-*/
+	char	*infile_path;
+	char	*outfile_path;
+	int		infile_fd;
+	char	outfile_fd;
+	char	**args_1;
+	char	**args_2;
+	char	**paths;
+	char	**cmd_1;
+	char	**cmd_2;
+	char	*cmd1_fullpath;
+	char	*cmd2_fullpath;
+}t_data;
+
 // ------------------------ Utils -------------------------- //
 
 
