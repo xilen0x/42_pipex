@@ -22,10 +22,10 @@
 // ------------------------ Structs ------------------------ //
 typedef struct s_data
 {
-	char	*infile_path;
-	char	*outfile_path;
+	char	*infile;
+	char	*outfile;
 	int		infile_fd;
-	char	outfile_fd;
+	char	outfile_fd;//verificar si es necesario cambiar a int
 	char	**args_1;
 	char	**args_2;
 	char	**paths;
@@ -35,21 +35,10 @@ typedef struct s_data
 	char	*cmd2_fullpath;
 }t_data;
 
-// ------------------------ Utils -------------------------- //
-
-
-// ------------------------ Checks ------------------------ //
-
-
-// ------------------------ List & nodes ------------------ //
-//t_stack	*ft_init_list(char **av);
-//t_stack	*ft_newnode(int num);
-//t_stack	*ft_get_last_node(t_stack *stack);
-//void	ft_stack_add_back(t_stack **stack, t_stack *newnode);
-//void	ft_printstack(t_stack *stack_a, t_stack *stack_b, char *str);
-//int		ft_lst_size(t_stack *stack);
-//int		ft_find_max(t_stack *stack);
-//int		ft_find_min(t_stack *stack);
-
-
+void	ft_get_argvs(char **argv, t_data *data);
+void	ft_get_paths(char **envp, t_data *data);
+void	ft_open_files(char **argv, t_data *data);
+int		ft_parse_cmds(t_data *data);
+void	ft_execute(t_data *data);
+void	ft_errors(int n);
 #endif
