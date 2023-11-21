@@ -75,14 +75,29 @@ int	ft_parse_cmds(t_data *data)
 }
 
 /*Funcion que muestra mensaje de error y uso correcto*/
-void	ft_errors(int n)
+int	ft_errors(int n)
 {
 	if (n == 1)
-		perror("Use: ./pipex infile \"1st_command\" \"2nd_command\" outfile\n");
+	{
+		write (2, "Use: ./pipex file1 \"1st_command\" \"2nd_command\" file2\n", 53);
+		return (1);
+	}
 	else if (n == 2)
-		perror("Error trying to open file!");
+	{
+		write (2, "bash: infile: No such file or directory\n", 40);
+		exit(1);
+	}
 	else if (n == 3)
-		perror("Error trying to write to file!");
+	{
+		write (2, "bash: outfile: Permission denied\n", 33);
+		exit(1);
+	}
 	else if (n == 4)
-		perror("Error: command not found!");
+	{
+		write (2, "Command not found!\n", 19);
+		exit(1);
+	}
+	else
+		write (2, "error", 5);
+	return (1);
 }

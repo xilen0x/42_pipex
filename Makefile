@@ -11,7 +11,7 @@ OBJS_DIR =	objs/
 OBJ_FILES = $(SRC_FILES:.c=.o)
 OBJS = $(addprefix $(OBJS_DIR), $(OBJ_FILES))
 DEPS        := $(OBJS:.o=.d)
-CC = gcc
+CC = clang -g
 CFLAGS = -Wall -Wextra -Werror
 RM = rm -rf
 AR = ar rc

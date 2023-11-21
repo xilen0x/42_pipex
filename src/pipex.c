@@ -37,14 +37,8 @@ void	ft_open_files(char **argv, t_data *data)
 {
 	data->infile_fd = open(argv[1], O_RDONLY);
 	if (data->infile_fd == -1)
-	{
 		ft_errors(2);
-		return ;
-	}
-	data->outfile_fd = open(argv[4], O_WRONLY);
+	data->outfile_fd = open(argv[4], O_CREAT | O_WRONLY | O_TRUNC, 0660);
 	if (data->outfile_fd == -1)
-	{
 		ft_errors(3);
-		return ;
-	}
 }

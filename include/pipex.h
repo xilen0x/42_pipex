@@ -40,5 +40,5 @@ void	ft_get_paths(char **envp, t_data *data);
 void	ft_open_files(char **argv, t_data *data);
 int		ft_parse_cmds(t_data *data);
 void	ft_execute(t_data *data);
-void	ft_errors(int n);
+int		ft_errors(int n);
 #endif
