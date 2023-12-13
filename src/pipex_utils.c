@@ -12,7 +12,8 @@
 
 #include "../include/pipex.h"
 
-/**/
+/*funcion que crea el fullpath del comando y verifica si existe
+para poder guardarlo o no*/
 static int	search_command_path1(char *cmd, t_data *data)
 {
 	char	*cmd_path;
@@ -35,7 +36,7 @@ static int	search_command_path1(char *cmd, t_data *data)
 	return (1);
 }
 
-/**/
+/*idem search_command_path1*/
 static int	search_command_path2(char *cmd, t_data *data)
 {
 	char	*cmd_path;
@@ -79,7 +80,7 @@ int	ft_errors(int n)
 {
 	if (n == 1)
 	{
-		write (2, "Use: ./pipex file1 \"1st_command\" \"2nd_command\" file2\n", 53);
+		write (2, "Use: ./pipex file1 \"1st_com\" \"2nd_com\" file2\n", 53);
 		return (1);
 	}
 	else if (n == 2)

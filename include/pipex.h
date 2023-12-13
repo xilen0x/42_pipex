@@ -25,7 +25,7 @@ typedef struct s_data
 	char	*infile;
 	char	*outfile;
 	int		infile_fd;
-	char	outfile_fd;//verificar si es necesario cambiar a int
+	char	outfile_fd;
 	char	**args_1;
 	char	**args_2;
 	char	**paths;
